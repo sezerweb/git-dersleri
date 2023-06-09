@@ -59,9 +59,24 @@ master mı, main mi
 1. Checkout    
    git log sonrası gelen listedeki commitlerin hash kodu ile istediğimiz commite geri dönebiliriz.  
    git checkout 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d  gibi  
-   kafayı kopardık burada incelme işlemi sonrası mastra dönebiliriz ya da yeni bir branch oluşturup oradan devam edebiliriz daha sonra masterla merge ederiz.
+   kafayı kopardık burada incelme işlemi sonrası mastera dönebiliriz ya da yeni bir branch oluşturup oradan devam edebiliriz daha sonra masterla merge ederiz.
 2. Reset vs Revert
    git reset 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d ile döndüğümüz commiten sonraki commitleri siliyor ama değişiklikler duruyor, git reset --hard 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d dersek değişiklikleri de siliyor.
-   git log kayıtlarını düzenlmiş oluyoruz.  
-   git revert 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d ilgili commiti geri aldım ama aynı branchdan devam ettim, tarihçe bozulmadı. ama geri almış oldum.
-     
+   git log kayıtlarını düzenlemiş oluyoruz.  
+   git revert 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d ilgili commiti geri aldım ama aynı branchdan devam ettim, tarihçe bozulmadı. ama geri almış oldum. geri aldığım commit duruyor ama. 
+3. Git Diff  
+   farkları gösterir 
+   git diff o ana yapılmış ama add yapılmamış dosya farklılıklarını gösterir.  
+   git diff HEAD  
+   git diff 1f1a1e 90d19ad diyerek iki commit arasındaki farkı görürüz
+   git diff master feat  iki branch arasındaki farkları görürüz   
+
+4. Rebase   
+   Masterdan ayrı bir branchla çalışırken, masterda değişilik olabilir, conflict olmamasına rağmen kendi branchımızla merge etmek isteyebiliriz. Bu şekilde bir çok kez merge yapılabilir ve git tarihçiseninde bir sürü gereksiz merge logu oluşur. Tarihçeyi mergelerden temizlemek için yapılabilir ama daha önce başkaları ile kendi branchlarımı paylaşmamışsam.
+   git rebase master  : bulunduğum branchdaki merge commitleri vs temizler, ve sıralar.. mater ve sonrasında diğer branch commitlerini sıralar.
+
+
+
+## Notlar:
+   git config --global core.editor "nano" : editörü değiştir.  
+   git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
