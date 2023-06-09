@@ -27,7 +27,7 @@ master mı, main mi
    git add . ya da   : staging bölümüne attık  
    git restore --staged xxxfile.txt  ya da git restore --staged . : stagingden geri alabiliriz  
    git commit -m "ilk commitim bu"  
-   git commit -a -m "ilk commit de olur": ile add ve commit işlemini aynı anda yaptım
+   git commit -a -m "ilk commit de olur": ile add ve commit işlemini aynı anda yaptım ama daha önce add yapılmışsa.
 4. Git Log  
    git log : commitleri görebiliriz
    git bash ekranında uzun commit sırası olunca oklarla gezin q ile çık
@@ -56,7 +56,12 @@ master mı, main mi
    git stash clear ile temizlerim
 ---   
 ## Geçmişe Dönme
-1. Checkout  
-
----
+1. Checkout    
+   git log sonrası gelen listedeki commitlerin hash kodu ile istediğimiz commite geri dönebiliriz.  
+   git checkout 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d  gibi  
+   kafayı kopardık burada incelme işlemi sonrası mastra dönebiliriz ya da yeni bir branch oluşturup oradan devam edebiliriz daha sonra masterla merge ederiz.
+2. Reset vs Revert
+   git reset 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d ile döndüğümüz commiten sonraki commitleri siliyor ama değişiklikler duruyor, git reset --hard 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d dersek değişiklikleri de siliyor.
+   git log kayıtlarını düzenlmiş oluyoruz.  
+   git revert 1f1a1ee9090d19ad37a8d4d83828b30e90a3597d ilgili commiti geri aldım ama aynı branchdan devam ettim, tarihçe bozulmadı. ama geri almış oldum.
      
